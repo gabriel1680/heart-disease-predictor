@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='../static/style.css' rel='stylesheet'>
+    <title>Teste de problemas cardíacos</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Teste para problemas cardíacos</h1>
+        <form method="post">
+            <h2>Preencha as informações abaixo</h2>
+            <label for="age">Idade</label>
+            <input type="number" name="age" id="age" required>
+            <div class="sex-input">
+                Sexo: 
+                <label>
+                    M
+                    <input type="radio" name="sex" value="1" required>
+                </label>
+                <label>
+                    F
+                    <input type="radio" name="sex" value="0" required>
+                </label>
+            </div>
+            <label for="cp">Nível de dores no peito</label>
+            <select name="cp" id="cp" required>
+                <option value="" disabled selected>-- Selecione uma opção --</option>
+                <option value="1">angina típica</option>
+                <option value="2">angina atípica</option>
+                <option value="3">dor não anginosa</option>
+                <option value="4">assintomático(a)</option>
+            </select>
+            <label for="trestbps">Pressão arterial em repouso (mm de Hg)</label>
+            <input type="number" name="trestbps" id="trestbps" required>
+            <label for="chol">Colesterol sérico (mg/dl)</label>
+            <input type="number" name="chol" id="chol" required>
+            <label for="fbs">Açúcar no sangue em jejum</label>
+            <select name="fbs" id="fbs" required>
+                <option value="" disabled selected>-- Selecione uma opção --</option>
+                <option value="1"> > 120 mg/dl</option>
+                <option value="0"> < 120 mg/dl</option>
+            </select>
+            <button type="submit">Testar</button>
+        </form>
+    </div>
+</body>
+</html>
