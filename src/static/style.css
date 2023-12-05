@@ -64,3 +64,15 @@ button {
 button:hover {
     background-color: #6c5ce7;
 }
+
+.result-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+    background-color: white;
+    border-radius: 4px;
+    min-width: 360px;
+    width: 90%;
+    max-width: 600px;
+}
