@@ -13,4 +13,4 @@ def test_model_accuracy():
     model = ModelFactory.create_model()
     model.train(train_result)
     evaluator = AccuracyEvaluator(model)
-    assert evaluator.evaluate(test_result) >= 0.70
+    assert evaluator.evaluate(test_result) >= 0.80
