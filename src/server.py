@@ -6,17 +6,17 @@ from src.core.prediction_data import PredictionData
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route("/")
 def index():
     return render_template("index.html"), 200
 
 
-@app.route('/favicon.ico')
+@app.route("/favicon.ico")
 def favicon():
-    return send_from_directory('static', 'favicon.ico', mimetype='image/x-icon')
+    return send_from_directory("static", "favicon.ico", mimetype="image/x-icon")
 
 
-@app.route('/', methods=['POST'])
+@app.route("/", methods=["POST"])
 def get_prediction_result():
     form = request.form
     prediction_data = PredictionData(
