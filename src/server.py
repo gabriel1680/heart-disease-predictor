@@ -1,5 +1,6 @@
 from flask import Flask, request, send_from_directory, render_template
-from src.core import MLModelFactory, PredictionData
+from src.core.ml.factory import ModelFactory
+from src.core.prediction_data import PredictionData
 
 
 app = Flask(__name__)
@@ -26,6 +27,7 @@ def get_prediction_result():
         form.get("chol"),
         form.get("fbs")
     )
-    result = MLModelFactory.create_model().predict(prediction_data)
+    model = ModelFactory.create_model()
+    result = model.predict(prediction_data.get_params())
     msg = "Você têm problemas cardíacos" if result == 1 else "Você não têm problemas cardíacos"
     return render_template("result.html", result=msg), 200
