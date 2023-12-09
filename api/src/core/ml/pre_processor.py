@@ -1,4 +1,4 @@
-from src.core.ml.test_result import TestResult, TrainTestResult
+from src.core.ml.result import TestResult, TrainTestResult
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 

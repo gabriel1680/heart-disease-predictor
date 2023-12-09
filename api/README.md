@@ -51,3 +51,11 @@ Iniciando o servidor
 ```sh
 flask run
 ```
+
+### Testes
+
+Para executar os testes basta rodar o comando
+
+```sh
+pytest ./test
+```

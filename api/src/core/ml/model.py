@@ -1,5 +1,5 @@
 
-from src.core.ml.test_result import TrainTestResult
+from src.core.ml.result import TrainTestResult
 
 
 class Model():
