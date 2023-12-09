@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <link href='../static/style.css' rel='stylesheet'>
+    <link href='./style.css' rel='stylesheet'>
     <title>Teste de problemas cardíacos</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="container">
         <h1>Teste para problemas cardíacos</h1>
-        <form method="post">
+        <form method="post" id="heart-disease-form">
             <h2>Preencha as informações abaixo</h2>
             <label for="age">Idade</label>
             <input type="number" name="age" id="age" required>
@@ -46,5 +46,7 @@
             <button type="submit">Testar</button>
         </form>
     </div>
+
+    <script src="./script.js"></script>
 </body>
 </html>
