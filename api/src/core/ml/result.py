@@ -1,4 +1,6 @@
 class TestResult:
+    """Representa o conjunto de dados para o teste do modelo
+    """
 
     def __init__(self, X, Y):
         self.X = X
@@ -6,4 +8,6 @@ class TestResult:
 
 
 class TrainTestResult(TestResult):
+    """Representa o conjunto de dados para o teste de treino do modelo
+    """
     pass

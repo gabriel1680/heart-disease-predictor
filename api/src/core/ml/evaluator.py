@@ -3,6 +3,7 @@ from src.core.ml.model import Model
 from sklearn.metrics import accuracy_score
 
 class AccuracyEvaluator:
+    """Avaliador de acurácia do modelo"""
 
     def __init__(self, model: Model):
         self.__trained_model = model

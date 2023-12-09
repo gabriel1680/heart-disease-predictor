@@ -38,5 +38,5 @@ def get_prediction_result(form: PredictionRequest):
     )
     model = ModelFactory.create_model()
     result = model.predict(prediction_data.get_params())
-    msg = "Você têm problemas cardíacos" if result == 1 else "Você não têm problemas cardíacos"
-    return {"prediction": msg}, 200
+    message = "Você têm problemas cardíacos" if result == 1 else "Você não têm problemas cardíacos"
+    return {"prediction": message}, 201
