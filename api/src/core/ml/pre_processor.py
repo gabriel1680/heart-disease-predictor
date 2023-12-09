@@ -1,6 +1,7 @@
 from src.core.ml.result import TestResult, TrainTestResult
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
+from pandas import DataFrame
 
 
 class PreProcessor:
@@ -8,16 +9,20 @@ class PreProcessor:
 
     seed = 7
 
-    def __init__(self, dataset, test_percentage):
-        self.dataset = dataset.query(
-            "chol != '?' & fbs != '?' & trestbps != '?'")
+    def __init__(self, dataset: DataFrame, test_percentage: float):
+        self.dataset = dataset
         self.test_percentage = test_percentage
 
     def process(self):
         """Orquestra o pré-processamento dos dados."""
+
+        # limpeza dos dados
+        filtered_dataset = self.dataset.query(
+            "chol != '?' & fbs != '?' & trestbps != '?'")
+
         # holdout
         test_data = self.__prepare_holdout(
-            self.dataset, self.test_percentage, self.seed)
+            filtered_dataset, self.test_percentage, self.seed)
 
         # normalização dos dados
         rescaled_data = self.__rescale(test_data)
