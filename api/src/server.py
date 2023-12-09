@@ -1,5 +1,6 @@
 from flask_openapi3 import OpenAPI, Info, Tag
 from flask_cors import CORS
+from flask import redirect
 
 from src.core.ml.factory import ModelFactory
 from src.core.prediction_data import PredictionData
@@ -25,7 +26,7 @@ def home():
     return redirect('/openapi')
 
 
-@app.post("/", tags=[prediction_tag], responses={"200", PredictionResponse})
+@app.post("/", tags=[prediction_tag], responses={"200": PredictionResponse})
 def get_prediction_result(form: PredictionRequest):
     prediction_data = PredictionData(
         form.age,

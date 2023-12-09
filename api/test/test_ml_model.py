@@ -5,7 +5,7 @@ from src.core.ml.pre_processor import PreProcessor
 
 
 def test_model_accuracy():
-    loader = DataLoader("data/dataset_test.csv")
+    loader = DataLoader("../data/dataset_test.csv")
     dataset = loader.load(
         ["age", "sex", "cp", "trestbps", "chol", "fbs", "num"])
     pre_processor = PreProcessor(dataset, 0.2)
