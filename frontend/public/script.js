@@ -16,17 +16,17 @@ function main() {
 async function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
-    const prediction = await getPrediction(form);
+    const prediction = await makePrediction(form);
     renderHeartDiseaseMessage(prediction, form);
 }
 
 /**
- * Busca a predição de doença cardíaca
+ * Faz a predição de doença cardíaca (backend)
  *
  * @param {HTMLFormElement} form
  * @returns {Promise<string>}
  */
-async function getPrediction(form) {
+async function makePrediction(form) {
     const formData = new FormData(form);
     const url = "http://localhost:8080";
     const response = await fetch(url, { method: "POST", body: formData });
